@@ -30,3 +30,5 @@ void reader()
 }
 
 A Pulse Width time between 20 uS and 100 uS, and A Pulse Interval time between 200 uS and 20 mS.
+
+OKKKKKK
