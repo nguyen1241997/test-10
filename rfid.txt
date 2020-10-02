@@ -1,0 +1,32 @@
+void reader()
+{
+	counter = 26; // vì bit dau truyen di là bit MSB nen ta ghi nguoc lai
+	wiegand = 0;
+
+	while (counter>0) // neu co nhieu (ko nhan du 26 bit) se roi vao vong lap vo tan
+	{
+		if (data1==0)
+		{
+			bit_set(wiegand,counter);
+			counter--;
+			delay_ms(1); //cho wa khoi 1 xung duoc kich
+		}
+
+		if (data0==0)
+		{
+			bit_clear(wiegand,counter);
+			counter--;
+			delay_ms(1); //cho wa khoi 1 xung duoc kich
+		}
+	}
+
+	wiegand = wiegand >> 1; //bo bit 0 (LSB) la bit kiem tra chan le
+
+	ID_number=wiegand; //lay 16 bit tiep theo cho ID_number
+
+	wiegand=wiegand>>16; //dich phai 16 bit
+
+	facility_code=wiegand; //lay 8 bit cho facility code
+}
+
+A Pulse Width time between 20 uS and 100 uS, and A Pulse Interval time between 200 uS and 20 mS.
